@@ -3,39 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1.0, minimum-scale=1.0" >
     <title>Chill-Zone</title>
-    <link rel="stylesheet" href="https://github.com/vishwa2001911/test_project/blob/de5bc07f65ead555a681b7347a4d2546c4df38fa/CSS/index.css">
+    <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/for_icons.css">
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 
     <style>
         .loding_page {
+        
             width: 100%;
             height: 100%;
             z-index: 100;
-            background-color: black;
             position: fixed;
             display: flex;
             justify-content: center;
-
+            font-size: 60px;
+            background-color: #010911;
+            
             
         }
 
         #loding_button {
-            font-size: 60px;
+            font-size: 40px;
             font-weight: bolder;
             padding: 10px;
             border: none;
             border-radius: 30px;
             background-color: transparent;
-            color: #D6DBDF;
+            color: #010911;
+            background-color: #D6DBDF;
+            border-radius: 30px;
         }
 
         #loding_button:hover {
             
             transition: 0.3s;
-            color: #F39C12;
+            background-color: #F39C12;
+            color: #D6DBDF;
         }
 
         .preloderBox {
@@ -49,19 +55,58 @@
             z-index: -1;
         }
 
-        @media (min-aspect-ratio: 16/9){
-            .back-video {
-                width: 100%;
-                height: auto;
-            }
+
+        .responsiv-navbar {
+            display: none;
+            margin-bottom: 20px;
+            
         }
 
-        @media (max-aspect-ratio: 16/9){
-            .back-video {
-                width: auto;
-                height: 100%;
-            }
+        .list {
+            display: none;
+            
         }
+
+        .li {
+            list-style: none;
+            padding: 20px;
+            display: block;
+            font-size: 30px;
+        }
+
+    
+        @media screen and (max-width: 800px) {
+            #loding_page {
+                font-size: 30px;
+                
+            }
+
+            .preloderBox {
+                margin-top:90%;
+            }
+
+            #loding_button {
+                font-size: 30px;
+                
+            }
+
+            picture {
+                display: none;
+            }
+
+            .responsiv-navbar {
+                display: block;
+            }
+
+            .nav-list {
+                display: none;
+            }
+
+
+        }
+
+
+        
 
     </style>
 
@@ -72,11 +117,11 @@
         
         
 
-        <img src="images/header.jpg" class="back-video">
+        
 
         <div class="preloderBox">
 
-            <span style="font-size: 60px; font-weight: bold; padding-right: 5px;">Chill-<span style="color: #F39C12;">Zone</span></span>
+            <span style="font-weight: bold; padding-right: 5px;">Chill-<span style="color: #F39C12;">Zone</span></span>
 
         <button id="loding_button" @click="preloder()">
             Explore Now
@@ -91,10 +136,11 @@
                 <div class="nav-list">
                     <ul class="nav-list">
                         <li class="nav-items"><a href="#" class="nav-btn" hidden >Home</a></li>
-                        <li class="nav-items"><a href="asset/movies.html" class="nav-btn">Movies</a></li>
-                        <li class="nav-items"><a href="asset/tv-series.html" class="nav-btn">TV-series</a></li>
-                        <li class="nav-items"><a href="asset/todays_trending.html" class="nav-btn">Trending</a></li>
-                        <li class="nav-items"><a href="#about" class="nav-btn">about</a></li>
+                        <li class="nav-items"><a href="movies.html" class="nav-btn">Movies</a></li>
+                        <li class="nav-items"><a href="tv-series.html" class="nav-btn">TV-series</a></li>
+                        <li class="nav-items"><a href="todays_trending.html" class="nav-btn">Trending</a></li>
+                        <li class="nav-items"><a href="#about" class="nav-btn">About</a></li>
+                        <li class="nav-items"><a href="#contactus" class="nav-btn">Contact us</a></li>
                     </ul>
                 </div>
             </div>
@@ -133,7 +179,7 @@
                             </td>
                             <td class="td">
                                 <div class="card-1">
-                                    <a href="asset/tv-series.html"><img class="card-image" src="images/witcher.jpg" width="300px"  alt=""></a>
+                                    <a href="tv-series.html"><img class="card-image" src="images/witcher.jpg" width="300px"  alt=""></a>
                                     <div class="card-text">
                                         <h4>TV-Serise</h4>
                                     </div>
@@ -141,7 +187,8 @@
                             </td>
                             <td class="td">
                                 <div class="card-1">
-                                    <img class="card-image" src="images/Copyright_free.jpg" width="300px"  alt="">
+                                    <a href="tv-series.html"><img class="card-image" src="images/Copyright_free.jpg" width="300px"  alt=""></a>
+                                    
                                     <div class="card-text">
                                         <h4>Today's Trending</h4>
                                     </div>
@@ -169,14 +216,14 @@
                         
                         <td class="table-about-td">  
                             <div class="about-img">
-                                <img src="images/ss.jpg" style="opacity: 70%;" width="400px" alt="">
+                                <img src="images/new.webp" style="opacity: 70%;" width="400px" alt="">
                             </div>
                         </td>
                     </tr>
                 </table>
             </div>
             <hr>
-            <div class="container-comment">           
+            <div class="container-comment"  id="contactus">            
                 <table class="table-comment" id="messageBox">
                     <form action="#" method="post" id="comment-form" name="comment-form">
 
@@ -302,7 +349,9 @@ Vue.createApp({
     }
 }).mount('#loding_page')
 
-
+    function navbar() {
+        document.getElementById('list').style.display = 'block';
+    }
 
     </script>
 </body>
