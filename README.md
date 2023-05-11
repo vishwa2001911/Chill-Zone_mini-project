@@ -1,7 +1,7 @@
 # Movie Ranking Website
 This is a university project designed to create a movie ranking website using the TMDB API.
 
-*URL :- https://vishwa2001911.github.io/Chill-Zone_mini-project/
+* URL :- https://vishwa2001911.github.io/Chill-Zone_mini-project/
 
 ## Features
 * View movie / Tv-series ranks
